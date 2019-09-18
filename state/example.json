@@ -1,0 +1,80 @@
+{
+  "tables": [
+    {
+      "partitionKey": {
+        "name": "PK",
+        "format": "pkformat",
+        "description": "$corpId and product abbreviation",
+        "value": "$corpId_CAND_MSG"
+      },
+      "sortKey": {
+        "name": "SK",
+        "format": "skformat",
+        "description": "the sk",
+        "value": "SK1_2"
+      },
+      "partitions": [
+        {
+          "partitionKey": {
+            "name": "PK",
+            "format": "pkformat",
+            "description": "$corpId and product abbreviation",
+            "value": "$corpId_CAND_MSG"
+          },
+          "rows": [
+            {
+              "sortKey": {
+                "name": "SK",
+                "format": "skformat",
+                "description": "the sk",
+                "value": "SK1_2"
+              },
+              "attributes": [
+                {
+                  "name": "testattr",
+                  "format": "attr",
+                  "description": "the attribute",
+                  "value": "something"
+                },
+                {
+                  "name": "candidate ID",
+                  "description": "candidate user ID",
+                  "format": "UUID probably",
+                  "value": "1"
+                },
+                {
+                  "name": "sender ID",
+                  "description": "hiring manager user ID",
+                  "format": "UUID probably",
+                  "value": "CSOD123"
+                }
+              ]
+            },
+            {
+              "sortKey": {
+                "name": "SK",
+                "format": "skformat",
+                "description": "the sk",
+                "value": "SK1_3"
+              },
+              "attributes": [
+                {
+                  "name": "testattr2",
+                  "format": "attr",
+                  "description": "the other attribute",
+                  "value": "something else"
+                },
+                {
+                  "name": "testattr3",
+                  "format": "attr",
+                  "description": "yet another attribute",
+                  "value": "something entirely different"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

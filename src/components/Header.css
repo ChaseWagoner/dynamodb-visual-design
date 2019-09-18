@@ -1,0 +1,45 @@
+.header-top {
+  background-color: dodgerblue;
+}
+
+.header-top th, td {
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+}
+
+.attributeNames {
+  color: dodgerblue;
+  background-color: whitesmoke;
+  border-bottom-width: 4px;
+}
+
+.keytitle {
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+  border-bottom-color: black;
+}
+
+.keytitle, .attrTitle {
+  font-weight: 600;
+}
+
+.keyname {
+  border-top: none;
+  border-bottom-width: 4px;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.keyname::before {
+  content: '(';
+}
+
+.keyname::after {
+  content: ')';
+}
+
+.attrTitle {
+  border-bottom-width: 4px;
+}
