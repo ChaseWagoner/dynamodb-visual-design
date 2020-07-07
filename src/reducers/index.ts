@@ -1,9 +1,10 @@
-import { AppShape, ActionType, SelectorAction, AddAction, TableSelector, PartitionSelector, PartitionRowSelector, StateAction } from '../actions';
+import { AppShape, ActionType, SelectorAction, AddAction, ProjectNameAction, TableSelector, PartitionSelector, PartitionRowSelector, StateAction } from '../actions';
 import defaultState from './defaultState';
 import { Reducer } from "redux";
 import { ITableInput, IPartition, IPartitionRow } from '../@custom_types/table-types';
 
 export interface State {
+  projectName: string;
   tables: ITableInput[];
 }
 
@@ -25,6 +26,12 @@ const addArrayElement = <T>(arr: T[], el: T) => {
 
 const reducers: AppShape<StateHandler, AddHandler, SelectHandler> = {
   importState: (state) => state,
+  updateProjectName: (state, action: ProjectNameAction) => {
+    return {
+      ...state,
+      projectName: action.projectName,
+    };
+  },
 
   table: {
     add: (state, action: AddAction) => {
@@ -134,6 +141,10 @@ const root: Reducer<State, StateAction | SelectorAction | AddAction> = (state = 
   switch (action.type) {
     case ActionType.IMPORT_STATE: {
       return reducers.importState((action as StateAction).state);
+    }
+
+    case ActionType.PROJECT_NAME_UPDATE: {
+      return reducers.updateProjectName(state, action);
     }
 
     case ActionType.TABLE_ADD: {

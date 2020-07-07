@@ -3,6 +3,7 @@ import { ITableInput, IPartition, IPartitionRow, IAttributeCell } from '../@cust
 
 export enum ActionType {
   IMPORT_STATE,
+  PROJECT_NAME_UPDATE,
   TABLE_ADD,
   TABLE_DELETE,
   TABLE_PARTITION_ADD,
@@ -27,6 +28,11 @@ export interface AddAction extends SelectorAction {
 export interface StateAction {
   type: ActionType.IMPORT_STATE;
   state: State;
+}
+
+export interface ProjectNameAction {
+  type: ActionType.PROJECT_NAME_UPDATE;
+  projectName: string;
 }
 
 interface BaseSelector {}
@@ -54,6 +60,7 @@ interface AppThing<TAdd, TDelete> {
 
 export interface AppShape<TState, TAdd, TSelect> {
   importState: TState;
+  updateProjectName: (state: State, projectName: string) => TState;
 
   table: AppThing<TAdd, TSelect> & {
     partition: AppThing<TAdd, TSelect> & {
@@ -73,6 +80,11 @@ const Actions: AppShape<StateCreator, AddCreator, SelectorCreator> = {
   importState: (state: State): StateAction => ({
     type: ActionType.IMPORT_STATE,
     state,
+  }),
+
+  updateProjectName: (state: State, projectName: string) => ({
+    type: ActionType.PROJECT_NAME_UPDATE,
+    projectName,
   }),
 
   table: {
