@@ -52,7 +52,7 @@ export default class App extends React.Component {
         <br/>
         <a
           id="down"
-          href=""
+          href="#download-state"
           onClick={prepareDownload}
           download="state.json"
         >
@@ -67,7 +67,6 @@ export default class App extends React.Component {
                 partitionKey={table.partitionKey}
                 sortKey={table.sortKey}
                 partitions={table.partitions}
-                dispatch={store.dispatch.bind(store)}
               />
             );
           })}

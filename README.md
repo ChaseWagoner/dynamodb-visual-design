@@ -23,5 +23,3 @@ This project attempts to recreate such a visual design, allowing table designers
 ---
 
 This repo doubles as a foray into frontend development with React. It could use significant improvement.
-
-Also, at time of writing it doesn't compile. To be investigated and fixed.

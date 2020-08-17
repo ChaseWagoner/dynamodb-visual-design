@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import EditableCell from './EditableCell';
+import { IHeader } from '../@custom_types/table-types';
 
 export default class extends React.Component<IHeader> {
   render() {

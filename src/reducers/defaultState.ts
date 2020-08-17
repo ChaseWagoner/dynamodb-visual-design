@@ -1,4 +1,5 @@
 import { State } from ".";
+import { IKeyCell, IPartition } from "../@custom_types/table-types";
 
 const partitionKey: IKeyCell = {
   name: 'PK',
