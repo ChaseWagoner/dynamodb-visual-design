@@ -1,5 +1,20 @@
 # DynamoDB Visual Design
 
+# Obsolete - use NoSQL Workbench
+
+The goals of this project are accomplished far better by Amazon's
+[NoSQL Workbench for Amazon DynamoDB][nosql-workbench].
+
+I began this project mid-2019 (I've since altered the commit history;
+the dates won't line up with this stated timeline). NoSQL Workbench was
+[released][nosql-workbench-history] as a preview in September 2019, and
+GA in March 2020.
+
+[nosql-workbench]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.html
+[nosql-workbench-history]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkbenchDocumentHistory.html
+
+----
+
 Various pages of AWS documentation describe DynamoDB partition design, often with a visual aid similar to the following:
 
 ![HR data in DynamoDB](./examples/design_HR.png)
